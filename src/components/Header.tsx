@@ -36,7 +36,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <img 
-                src="/lovable-uploads/77f04559-2276-4c39-87ec-adc407007fbc.png" 
+                src="/lovable-uploads/6f103292-09bb-47b1-9310-6cd0e2a87d70.png" 
                 alt="GraphQL Lint" 
                 className="w-8 h-8"
               />

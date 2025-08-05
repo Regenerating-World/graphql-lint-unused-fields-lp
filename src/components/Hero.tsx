@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="mb-8 flex justify-center">
             <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl">
               <img 
-                src="/lovable-uploads/77f04559-2276-4c39-87ec-adc407007fbc.png" 
+                src="/lovable-uploads/6f103292-09bb-47b1-9310-6cd0e2a87d70.png" 
                 alt="GraphQL Lint" 
                 className="w-16 h-16"
               />
@@ -50,9 +50,9 @@ const Hero = () => {
             </Button>
             
             <Button 
-              variant="outline" 
+              variant="hero" 
               size="lg" 
-              className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              className="text-lg px-8 py-6 bg-white/10 text-white border border-white/30 hover:bg-white/20 hover:border-white/50 hover:scale-105"
               asChild
             >
               <a href="#documentation">

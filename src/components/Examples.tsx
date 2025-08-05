@@ -6,63 +6,167 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Examples = () => {
   const { t } = useLanguage();
 
-  const consoleOutput = `GraphQL Lint Analysis Results
-============================
+  const consoleOutput = `🔍 GRAPHQL LINT - ANALYSIS RESULT
 
-📊 Summary:
-  • Total files scanned: 124
-  • GraphQL queries found: 45
-  • Unused fields detected: 7
-  • Overall usage: 97.9%
+📊 GENERAL STATISTICS:
+   🎯 Queries analyzed: 42
+   📋 Fields found: 156
+   ✅ Fields in use: 142 (91%)
+   ❌ Unused fields: 14 (9%)
 
-⚠️  Unused Fields:
-  • user.lastLoginDate (UserProfile.tsx:23)
-  • post.viewCount (PostList.tsx:45)
-  • comment.ipAddress (CommentSection.tsx:67)
+🚨 These are the unused fields in your GraphQL queries:
 
-✅ Performance:
-  • Scan completed in 2.3s
-  • Memory usage: 145MB
-  • Cache hits: 89%`;
+🔹 GetUser (3 unused fields) [/path/to/file.ts]
+   • email (line 15:10)
+     📁 File: /path/to/file.ts
+     Path: user → email
+   • phone (line 16:12)
+     📁 File: /path/to/file.ts
+     Path: user → phone
+   • avatar (line 17:8)
+     📁 File: /path/to/file.ts
+     Path: user → profile → avatar
+
+🔹 GetUserProfile (2 unused fields) [/path/to/components/UserProfile.tsx]
+   • lastLogin (line 25:5)
+     📁 File: /path/to/components/UserProfile.tsx
+     Path: user → profile → lastLogin
+   • preferences (line 28:12)
+     📁 File: /path/to/components/UserProfile.tsx
+     Path: user → profile → preferences
+
+💡 RECOMMENDATIONS:
+   1. Remove unused fields to reduce payload size
+   2. Consider using GraphQL fragments for common fields
+   3. Review field usage patterns in your components`;
 
   const jsonOutput = `{
-  "summary": {
-    "totalFiles": 124,
-    "queriesFound": 45,
-    "unusedFields": 7,
-    "usagePercentage": 97.9,
-    "scanDuration": "2.3s"
-  },
   "unusedFields": [
     {
-      "field": "user.lastLoginDate",
-      "location": "UserProfile.tsx:23",
-      "query": "GET_USER_PROFILE",
-      "reason": "Field queried but never accessed"
+      "field": {
+        "name": "email",
+        "path": ["user", "email"],
+        "line": 15,
+        "column": 10,
+        "alias": null,
+        "actualName": "email"
+      },
+      "query": {
+        "name": "GetUser",
+        "location": {
+          "file": "/path/to/file.ts",
+          "line": 10,
+          "column": 5
+        }
+      },
+      "estimatedSavings": {
+        "sizeReduction": "25 bytes",
+        "percentage": 8.5
+      }
     },
     {
-      "field": "post.viewCount", 
-      "location": "PostList.tsx:45",
-      "query": "GET_POSTS",
-      "reason": "Destructured but unused variable"
+      "field": {
+        "name": "phone",
+        "path": ["user", "phone"],
+        "line": 16,
+        "column": 12,
+        "alias": null,
+        "actualName": "phone"
+      },
+      "query": {
+        "name": "GetUser",
+        "location": {
+          "file": "/path/to/file.ts",
+          "line": 10,
+          "column": 5
+        }
+      },
+      "estimatedSavings": {
+        "sizeReduction": "20 bytes",
+        "percentage": 6.2
+      }
     }
   ],
-  "performance": {
-    "memoryUsage": "145MB",
-    "cacheHits": 89
+  "totalQueriesAnalyzed": 42,
+  "totalFieldsAnalyzed": 156,
+  "usedFieldsCount": 142,
+  "unusedFieldsCount": 14,
+  "usageRate": 91.0,
+  "estimatedTotalSavings": {
+    "sizeReduction": "150 bytes",
+    "percentage": 12.0
+  },
+  "analysisMetadata": {
+    "timestamp": "2024-01-15T10:30:00Z",
+    "version": "1.6.14",
+    "projectPath": "/path/to/project"
   }
 }`;
 
-  const eslintOutput = `src/components/UserProfile.tsx
-  23:5  warning  Unused GraphQL field 'lastLoginDate'  graphql-lint/unused-field
-
-src/components/PostList.tsx
-  45:12  warning  Unused GraphQL field 'viewCount'  graphql-lint/unused-field
-
-src/components/CommentSection.tsx
-  67:8  warning  Unused GraphQL field 'ipAddress'  graphql-lint/unused-field
-
-✖ 3 problems (0 errors, 3 warnings)`;
+  const eslintOutput = `[
+  {
+    "filePath": "/path/to/file.ts",
+    "messages": [
+      {
+        "ruleId": "graphql-lint-unused-fields",
+        "severity": 2,
+        "message": "Field 'email' was requested but not used",
+        "line": 15,
+        "column": 10,
+        "nodeType": "GraphQLField",
+        "endLine": 15,
+        "endColumn": 15,
+        "fix": {
+          "range": [150, 155],
+          "text": ""
+        }
+      },
+      {
+        "ruleId": "graphql-lint-unused-fields",
+        "severity": 2,
+        "message": "Field 'phone' was requested but not used",
+        "line": 16,
+        "column": 12,
+        "nodeType": "GraphQLField",
+        "endLine": 16,
+        "endColumn": 16,
+        "fix": {
+          "range": [160, 165],
+          "text": ""
+        }
+      }
+    ],
+    "errorCount": 2,
+    "warningCount": 0,
+    "fixableErrorCount": 2,
+    "fixableWarningCount": 0,
+    "source": "query GetUser {\\n  user {\\n    id\\n    name\\n    email\\n    phone\\n  }\\n}"
+  },
+  {
+    "filePath": "/path/to/components/UserProfile.tsx",
+    "messages": [
+      {
+        "ruleId": "graphql-lint-unused-fields",
+        "severity": 2,
+        "message": "Field 'lastLogin' was requested but not used",
+        "line": 25,
+        "column": 5,
+        "nodeType": "GraphQLField",
+        "endLine": 25,
+        "endColumn": 13,
+        "fix": {
+          "range": [250, 258],
+          "text": ""
+        }
+      }
+    ],
+    "errorCount": 1,
+    "warningCount": 0,
+    "fixableErrorCount": 1,
+    "fixableWarningCount": 0,
+    "source": "query GetUserProfile {\\n  user {\\n    profile {\\n      name\\n      avatar\\n      lastLogin\\n    }\\n  }\\n}"
+  }
+]`;
 
   const examples = [
     {
