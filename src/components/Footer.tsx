@@ -1,5 +1,5 @@
-import { Github, Linkedin, MessageCircle, Heart } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { Github, Linkedin, MessageCircle, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -8,19 +8,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      url: 'https://www.linkedin.com/in/franco-regenerating-world',
-      label: 'LinkedIn'
+      url: "https://www.linkedin.com/in/franco-regenerating-world",
+      label: "LinkedIn",
     },
     {
       icon: MessageCircle,
-      url: 'https://t.me/FrancoAguzzi',
-      label: 'Telegram'
+      url: "https://t.me/FrancoAguzzi",
+      label: "Telegram",
     },
     {
       icon: Github,
-      url: 'https://github.com/FrancoAguzzi',
-      label: 'GitHub'
-    }
+      url: "https://github.com/FrancoAguzzi",
+      label: "GitHub",
+    },
   ];
 
   return (
@@ -30,17 +30,18 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/77f04559-2276-4c39-87ec-adc407007fbc.png" 
-                  alt="GraphQL Lint" 
+              <div className="w-14 h-14 bg-white rounded-sm p-2 flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="GraphQL Lint Unused Fields"
                   className="w-8 h-8"
                 />
               </div>
               <div className="font-bold text-xl text-white">GraphQL Lint</div>
             </div>
             <p className="text-slate-400 leading-relaxed">
-              Detect unused fields in GraphQL queries with powerful terminal and pipeline tools.
+              Detect unused fields in GraphQL queries with powerful terminal and
+              pipeline tools.
             </p>
           </div>
 
@@ -49,19 +50,25 @@ const Footer = () => {
             <h3 className="font-semibold text-white text-lg">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#features" className="text-slate-400 hover:text-primary transition-colors">
+                <a
+                  href="#features"
+                  className="text-slate-400 hover:text-primary transition-colors"
+                >
                   Features
                 </a>
               </li>
               <li>
-                <a href="#documentation" className="text-slate-400 hover:text-primary transition-colors">
+                <a
+                  href="#documentation"
+                  className="text-slate-400 hover:text-primary transition-colors"
+                >
                   Documentation
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://www.npmjs.com/package/graphql-lint-unused-fields" 
-                  target="_blank" 
+                <a
+                  href="https://www.npmjs.com/package/graphql-lint-unused-fields"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-primary transition-colors"
                 >
@@ -69,9 +76,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://github.com/regenerating-world/graphql-lint-unused-fields" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/regenerating-world/graphql-lint-unused-fields"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-primary transition-colors"
                 >
@@ -83,7 +90,9 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-white text-lg">{t('footer.contact')}</h3>
+            <h3 className="font-semibold text-white text-lg">
+              {t("footer.contact")}
+            </h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -110,10 +119,11 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-slate-400 text-sm">
-            © {currentYear} GraphQL Lint Unused Fields. {t('footer.license')}.
+            © {currentYear} GraphQL Lint Unused Fields. {t("footer.license")}.
           </div>
           <div className="flex items-center text-slate-400 text-sm">
-            Made with <Heart className="w-4 h-4 text-red-500 mx-1" /> for the GraphQL community
+            Made with <Heart className="w-4 h-4 text-red-500 mx-1" /> for the
+            GraphQL community
           </div>
         </div>
       </div>
