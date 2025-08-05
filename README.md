@@ -1,73 +1,139 @@
-# Welcome to your Lovable project
+# GraphQL Lint Unused Fields - Tiny GraphQL Tool
 
-## Project info
+🚀 **Tiny GraphQL tool to detect unused fields in GraphQL queries**. Lightweight CLI tool supporting React, TypeScript, aliases, cross-file analysis and CI/CD integration. Perfect for GraphQL linting and optimization.
 
-**URL**: https://lovable.dev/projects/8c17137a-4036-449d-888f-d4dfae72092b
+## 🎯 What is GraphQL Lint Unused Fields?
 
-## How can I edit this code?
+**GraphQL Lint Unused Fields** is a **Tiny GraphQL tool** designed to help developers identify and remove unused fields from their GraphQL queries. This lightweight CLI tool provides comprehensive GraphQL linting capabilities with support for:
 
-There are several ways of editing your application.
+- **GraphQL Lint Analysis**: Detection of `gql` and `graphql` queries
+- **Tiny GraphQL CLI Tool**: Lightweight command-line interface
+- **GraphQL Aliases Support**: Complete alias mapping for GraphQL linting
+- **Cross-file GraphQL Analysis**: Tiny GraphQL tool tracking between TypeScript/JavaScript files
+- **React GraphQL Lint Support**: JSX, hooks, destructuring analysis for GraphQL
+- **Tiny GraphQL Pipeline**: Configurable pipeline with customizable steps
 
-**Use Lovable**
+## ✨ Key Features - Tiny GraphQL Tool
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8c17137a-4036-449d-888f-d4dfae72092b) and start prompting.
+### 🔍 GraphQL Lint Analysis
+Tiny GraphQL tool for detecting `gql` and `graphql` queries with precision.
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🏷️ GraphQL Aliases Support
+Complete alias mapping for GraphQL linting and optimization.
 
-**Use your preferred IDE**
+### 📁 Cross-file GraphQL Analysis
+Tiny GraphQL tool tracking between TypeScript/JavaScript files for comprehensive analysis.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### ⚛️ React GraphQL Lint Support
+JSX, hooks, destructuring analysis for GraphQL development.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 💻 Tiny GraphQL CLI Tool
+Lightweight CLI for CI/CD integration and development workflows.
 
-Follow these steps:
+### 🔄 GraphQL Lint Pipeline
+Tiny GraphQL pipeline with customizable steps (scan, extract, analyze, validate, report).
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 📊 GraphQL Lint Output Formats
+Console, JSON, ESLint formats for GraphQL linting integration.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### ⚙️ Tiny GraphQL Configuration
+JSON/YAML configuration for GraphQL lint tool customization.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Quick Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+# Install the Tiny GraphQL tool
+npm install graphql-lint-unused-fields
+
+# Or use yarn
+yarn add graphql-lint-unused-fields
 ```
 
-**Edit a file directly in GitHub**
+## 💻 Tiny GraphQL CLI Usage
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Basic Usage
+```bash
+# Run GraphQL lint analysis
+npx graphql-lint-unused-fields
 
-**Use GitHub Codespaces**
+# Analyze specific directory
+npx graphql-lint-unused-fields ./src
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Use with configuration file
+npx graphql-lint-unused-fields --config .graphql-lint.json
+```
 
-## What technologies are used for this project?
+### Main GraphQL lint commands:
+- `--scan`: Scan files for GraphQL queries
+- `--extract`: Extract GraphQL queries from files
+- `--analyze`: Analyze field usage in GraphQL queries
+- `--validate`: Validate GraphQL query structure
+- `--report`: Generate GraphQL lint reports
 
-This project is built with:
+## 🔄 Tiny GraphQL Pipeline
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Tiny GraphQL pipeline system with 5 customizable steps:
 
-## How can I deploy this project?
+1. **Scan**: GraphQL file scanning
+2. **Extract**: GraphQL query extraction
+3. **Analyze**: GraphQL field usage analysis
+4. **Validate**: GraphQL query validation
+5. **Report**: GraphQL lint report generation
 
-Simply open [Lovable](https://lovable.dev/projects/8c17137a-4036-449d-888f-d4dfae72092b) and click on Share -> Publish.
+## 📊 Tiny GraphQL Output Examples
 
-## Can I connect a custom domain to my Lovable project?
+### Tiny GraphQL formatted console with statistics
+```
+Found 15 GraphQL queries
+Unused fields detected: 8
+Optimization potential: 23%
+```
 
-Yes, you can!
+### Tiny GraphQL structured JSON for processing
+```json
+{
+  "queries": 15,
+  "unusedFields": 8,
+  "optimization": "23%"
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Tiny GraphQL ESLint format for integration
+```
+warning: Unused field 'description' in query 'getUser'
+warning: Unused field 'createdAt' in query 'getPosts'
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📚 Tiny GraphQL Complete Documentation
+
+- **Tiny GraphQL Core Package README**: [Core Documentation](https://github.com/FrancoAguzzi/graphql-lint-unused-fields)
+- **Tiny GraphQL CLI Documentation**: [CLI Guide](https://github.com/FrancoAguzzi/graphql-lint-unused-fields#cli-usage)
+- **Tiny GraphQL Pipeline Configuration**: [Pipeline Setup](https://github.com/FrancoAguzzi/graphql-lint-unused-fields#pipeline)
+- **Tiny GraphQL Aliases Mapping**: [Aliases Guide](https://github.com/FrancoAguzzi/graphql-lint-unused-fields#aliases)
+
+## 🔗 Important Links
+
+- **NPM Package**: [graphql-lint-unused-fields](https://www.npmjs.com/package/graphql-lint-unused-fields)
+- **GitHub Repository**: [GraphQL Lint Unused Fields](https://github.com/FrancoAguzzi/graphql-lint-unused-fields)
+- **Personal GitHub**: [Franco Aguzzi](https://github.com/FrancoAguzzi)
+- **Organization GitHub**: [Regenerating World](https://github.com/regenerating-world)
+
+## 🤝 Contributing
+
+We welcome contributions to make this **Tiny GraphQL tool** even better! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you need help with this **Tiny GraphQL tool**, please:
+
+1. Check the [documentation](https://github.com/FrancoAguzzi/graphql-lint-unused-fields)
+2. Search [existing issues](https://github.com/FrancoAguzzi/graphql-lint-unused-fields/issues)
+3. Create a [new issue](https://github.com/FrancoAguzzi/graphql-lint-unused-fields/issues/new)
+
+---
+
+**GraphQL Lint Unused Fields** - The ultimate **Tiny GraphQL tool** for detecting unused fields in GraphQL queries. Optimize your GraphQL queries with our lightweight CLI tool designed for modern development workflows.

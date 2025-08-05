@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Logo */}
           <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-24 h-24 bg-white backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl">
               <img src="/logo.png" alt="GraphQL Lint" className="w-16 h-16" />
             </div>
           </div>

@@ -7,8 +7,19 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./index.html",
 	],
 	prefix: "",
+	// Otimizações para SEO e performance
+	safelist: [
+		// Classes importantes para SEO que podem ser removidas pelo purge
+		'text-foreground',
+		'text-background',
+		'bg-primary',
+		'bg-secondary',
+		'hover:bg-primary',
+		'hover:bg-secondary',
+	],
 	theme: {
 		container: {
 			center: true,
@@ -120,4 +131,9 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
+	// Otimizações para produção
+	corePlugins: {
+		// Remove preflight em produção para melhor performance
+		preflight: process.env.NODE_ENV === 'development',
+	},
 } satisfies Config;
